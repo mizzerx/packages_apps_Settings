@@ -116,7 +116,7 @@ public class MyDeviceInfoFragment extends DashboardFragment
         controllers.add(new FeedbackPreferenceController(fragment, context));
         controllers.add(new FccEquipmentIdPreferenceController(context));
         controllers.add(new UptimePreferenceController(context, lifecycle));
-		controllers.add(new SELinuxStatusPreferenceController(context));
+	controllers.add(new SELinuxStatusPreferenceController(context));
         return controllers;
     }
 
