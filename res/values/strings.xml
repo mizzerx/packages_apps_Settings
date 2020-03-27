@@ -2664,6 +2664,8 @@
     <string name="display_settings_title">Display</string>
     <!-- Sound settings screen heading -->
     <string name="sound_settings">Sound</string>
+	<!-- DO NOT TRANSLATE SELinux Enforcing -->
+    <string name="selinux_status_enforcing" translatable="false">&#160;</string>
     <!-- DO NOT TRANSLATE Summary placeholder -->
     <string name="summary_placeholder" translatable="false">&#160;</string>
     <!-- DO NOT TRANSLATE Summary placeholder reserving 2 lines -->
@@ -3141,6 +3143,12 @@
     <string name="kernel_version">Kernel version</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="build_number">Build number</string>
+	<!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="selinux_status">SELinux Status</string>
+	<!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="total_ram">Total Ram</string>
+	<!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="platform_revision">Platform</string>
     <!-- About phone screen, tapping this button will take user to a seperate UI to check Google Play system update [CHAR LIMIT=60] -->
     <string name="module_version">Google Play system update</string>
 
