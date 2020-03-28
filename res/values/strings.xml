@@ -11440,5 +11440,9 @@
     <string name="selinux_status_disabled">Disabled</string>
     <string name="selinux_status_permissive">Permissive</string>
     <string name="selinux_status_enforcing">Enforcing</string>
+	
+	<!-- Platform and Ram Status -->
+	<string name="platform_revision">Platform</string>
+	<string name="total_ram">Total Ram</string>
 
 </resources>
