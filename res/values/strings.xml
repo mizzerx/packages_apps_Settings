@@ -2664,8 +2664,6 @@
     <string name="display_settings_title">Display</string>
     <!-- Sound settings screen heading -->
     <string name="sound_settings">Sound</string>
-	<!-- DO NOT TRANSLATE SELinux Enforcing -->
-    <string name="selinux_status_enforcing" translatable="false">&#160;</string>
     <!-- DO NOT TRANSLATE Summary placeholder -->
     <string name="summary_placeholder" translatable="false">&#160;</string>
     <!-- DO NOT TRANSLATE Summary placeholder reserving 2 lines -->
