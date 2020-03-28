@@ -13,36 +13,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
 import android.os.SELinux;
+import android.os.SystemProperties;
+import android.text.TextUtils;
+
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.settings.R;
-import com.android.settings.core.BasePreferenceController;
+import com.android.settings.core.PreferenceControllerMixin;
+import com.android.settingslib.core.AbstractPreferenceController;
 
-public class SelinuxStatusPreferenceController extends BasePreferenceController {
+public class SELinuxStatusPreferenceController extends AbstractPreferenceController implements
+        PreferenceControllerMixin {
 
-    private static final String TAG = "SelinuxStatusCtrl";
+    private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
+    private static final String KEY_SELINUX_STATUS = "selinux_status";
 
-    public SelinuxStatusPreferenceController(Context context, String key) {
-        super(context, key);
+    public SELinuxStatusPreferenceController(Context context) {
+        super(context);
     }
 
     @Override
-    public int getAvailabilityStatus() {
-        return AVAILABLE;
+    public boolean isAvailable() {
+        return !TextUtils.isEmpty(SystemProperties.get(PROPERTY_SELINUX_STATUS));
     }
 
     @Override
-    public CharSequence getSummary() {
-        if (!SELinux.isSELinuxEnabled()) {
-            return (CharSequence) mContext.getString(R.string.selinux_status_disabled);
-        } else if (!SELinux.isSELinuxEnforced()) {
-            return (CharSequence) mContext.getString(R.string.selinux_status_permissive);
-        } else {
-            return (CharSequence) mContext.getString(R.string.selinux_status_enforcing);
+    public String getPreferenceKey() {
+        return KEY_SELINUX_STATUS;
+    }
+
+    @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        final Preference pref = screen.findPreference(KEY_SELINUX_STATUS);
+        if (pref == null) {
+            return;
         }
+        if (!SELinux.isSELinuxEnabled()) {
+            String status = mContext.getResources().getString(R.string.selinux_status_disabled);
+            pref.setSummary(status);
+        } else if (!SELinux.isSELinuxEnforced()) {
+            String status = mContext.getResources().getString(R.string.selinux_status_permissive);
+            pref.setSummary(status);
+        } else {
+			String status = mContext.getResources().getString(R.string.selinux_status_enforcing);
+			pref.setSummary(status);
+		}
     }
 }
