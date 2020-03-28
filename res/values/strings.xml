@@ -11444,5 +11444,8 @@
 	<!-- Platform and Ram Status -->
 	<string name="platform_revision">Platform</string>
 	<string name="total_ram">Total Ram</string>
+	
+	<!-- Build Date -->
+	<string name="build_date">Build date</string>
 
 </resources>

@@ -81,4 +81,6 @@
 	<string name="selinux_status">Trạng thái SELinux</string>
 	<string name="platform_revision">Nền tảng</string>
 	<string name="total_ram">Dung lượng Ram</string>
+	<string name="build_date">Ngày dựng</string>
+	
 </resources>
